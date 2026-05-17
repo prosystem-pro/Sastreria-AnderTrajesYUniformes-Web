@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './inventario-listado.component.css'
 })
 export class InventarioListadoComponent implements OnInit {
+  ultimoTap = 0;
   InventarioOriginal: any[] = [];
   InventarioFiltrado: any[] = [];
 
@@ -56,6 +57,16 @@ export class InventarioListadoComponent implements OnInit {
         console.error(err);
       }
     });
+  }
+  DetectarDobleTap(codigo: any) {
+    const tiempoActual = new Date().getTime();
+    const tapLength = tiempoActual - this.ultimoTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+      this.AbrirInventarioGestion(codigo);
+    }
+
+    this.ultimoTap = tiempoActual;
   }
   FiltrarInventario() {
 
