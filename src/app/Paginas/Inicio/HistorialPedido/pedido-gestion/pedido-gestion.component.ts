@@ -86,6 +86,7 @@ export class PedidoGestionComponent {
     Bata: ['TipoCuello', 'Largo', 'Espalda', 'LargoManga', 'AnchoBrazo', 'Pecho', 'Cintura', 'CinturaT', 'Cuello', 'Descripcion'],
     Blazer: ['Solapa', 'TipoCorte', 'Botones', 'Abertura', 'Talle', 'Largo', 'Espalda', 'EspaldaBaja', 'LargoManga', 'AnchoBrazo', 'Pecho', 'Cintura', 'CinturaT', 'FrentePecho', 'Descripcion'],
     Falda: ['Diseno', 'Categoria', 'Largo', 'Cintura', 'Cadera', 'Rodilla', 'Ruedo', 'Tiro', 'EntrePierna', 'Descripcion'],
+    Blusa: ['TipoCuello', 'Largo', 'Espalda', 'LargoManga', 'AnchoBrazo', 'Pecho', 'Cintura', 'CinturaT', 'Cuello', 'Descripcion'],
   };
 
   // Controlar si se muestra modal de confirmación
@@ -294,6 +295,7 @@ export class PedidoGestionComponent {
     if (nombre.includes('bata')) return this.MedidasPorProducto['Bata'];
     if (nombre.includes('blazer')) return this.MedidasPorProducto['Blazer'];
     if (nombre.includes('falda')) return this.MedidasPorProducto['Falda'];
+    if (nombre.includes('blusa')) return this.MedidasPorProducto['Blusa'];
 
     return [];
   }
